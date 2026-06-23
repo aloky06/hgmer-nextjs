@@ -126,7 +126,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               </h2>
               <div className="space-y-1">
                 {group.items.map((item) => {
-                  if (item.subItems) {
+                  if ("subItems" in item && item.subItems) {
                     const isOpen = openMenus[item.name] || item.subItems.some((sub: any) => pathname === sub.path);
                     const isActive = item.subItems.some((sub: any) => pathname === sub.path);
                     return (
@@ -171,11 +171,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     );
                   }
 
-                  const isActive = pathname === item.path;
+                  const itemPath = (item as any).path;
+                  const isActive = pathname === itemPath;
                   return (
                     <Link
-                      key={item.path}
-                      href={item.path!}
+                      key={itemPath}
+                      href={itemPath}
                       className={`flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-200 group ${
                         isActive
                           ? "bg-[#ff9933]/10 text-[#ff9933] font-semibold"
