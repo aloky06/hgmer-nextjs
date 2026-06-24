@@ -6,7 +6,7 @@ export default async function ShopPage() {
   // Fetch products from our NestJS Backend
   let products = [];
   try {
-    const res = await fetch('https://hgmer-git-master-hindsols-projects.vercel.app/api/products', { cache: 'no-store' });
+    const res = await fetch('https://hgmer-git-master-hindsols-projects.vercel.app/api/products');
     if (res.ok) {
       products = await res.json();
     }

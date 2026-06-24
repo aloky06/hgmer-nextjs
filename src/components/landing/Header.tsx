@@ -14,14 +14,12 @@ export default function Header() {
     >
       <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 group">
-          <div className="w-12 h-12 bg-gradient-to-br from-orange-100 to-orange-200 rounded-full flex items-center justify-center shadow-inner overflow-hidden relative">
-            <span className="text-orange-700 font-bold text-xl relative z-10 group-hover:scale-110 transition-transform">HM</span>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xl md:text-2xl font-extrabold text-orange-700 leading-tight tracking-tight">Har Ghar Mandir</span>
-            <span className="text-[10px] md:text-xs text-orange-800/70 font-medium uppercase tracking-wider">Sanskaron se juda har ghar</span>
-          </div>
+        <Link href="/" className="flex items-center group">
+          <img 
+            src="/hgmr.png" 
+            alt="Har Ghar Mandir Logo" 
+            className="h-12 md:h-16 w-auto object-contain group-hover:scale-105 transition-transform" 
+          />
         </Link>
 
         {/* Desktop Nav */}
