@@ -1,5 +1,7 @@
 import Image from 'next/image';
 
+export const dynamic = 'force-dynamic';
+
 export default async function ShopPage() {
   // Fetch products from our NestJS Backend
   let products = [];
