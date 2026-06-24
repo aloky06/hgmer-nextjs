@@ -11,6 +11,11 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
     return <>{children}</>;
   }
 
+  // If we are on the landing page (/), we use the custom premium Header and Footer from page.tsx
+  if (pathname === "/") {
+    return <main className="flex-grow">{children}</main>;
+  }
+
   return (
     <>
       {/* Navbar */}
