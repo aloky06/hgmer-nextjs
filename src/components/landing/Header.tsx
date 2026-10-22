@@ -342,3 +342,73 @@ export default function Header() {
     </header>
   );
 }
+import React, { useState } from 'react';
+import Link from 'next/link';
+
+export default function Header() {
+  const [query, setQuery] = useState('');
+
+  return (
+    <header className="w-full bg-white border-b border-amber-100 sticky top-0 z-50">
+      {/* 1. Top Offer Strip */}
+      <div className="bg-[#3d120d] text-amber-200 text-xs py-1.5 px-3">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-1.5 text-center leading-tight">
+          <span className="bg-[#b33927] text-white px-2 py-0.5 rounded text-[10px] font-bold">
+            विशेष छूट
+          </span>
+          <span className="text-white text-[11px] sm:text-xs">
+            ₹499+ पर फ्री डिलीवरी | कोड: <strong className="text-amber-300">SHUDDH10</strong>
+          </span>
+        </div>
+      </div>
+
+      {/* 2. Main Navigation Bar */}
+      <div className="max-w-7xl mx-auto px-4 py-2.5">
+        <div className="flex items-center justify-between gap-3">
+          {/* Logo */}
+          <Link href="/" className="flex-shrink-0">
+            <img 
+              src="/logo.png" 
+              alt="Har Ghar Mandir" 
+              className="h-9 sm:h-12 w-auto object-contain" 
+            />
+          </Link>
+
+          {/* Desktop Search Bar */}
+          <div className="hidden md:flex flex-1 max-w-md mx-4">
+            <div className="relative w-full">
+              <input
+                type="text"
+                placeholder="Search pooja samagri, kits, diya..."
+                className="w-full pl-9 pr-4 py-2 text-sm border rounded-full border-gray-300 focus:outline-none focus:border-amber-600"
+              />
+              <span className="absolute left-3 top-2.5 text-gray-400">🔍</span>
+            </div>
+          </div>
+
+          {/* Right Action Icons */}
+          <div className="flex items-center gap-2">
+            <span className="text-xs border px-2 py-1 rounded text-gray-600">EN</span>
+            <Link href="/cart" className="p-2 text-lg text-gray-700 relative">
+              🛒
+            </Link>
+          </div>
+        </div>
+
+        {/* 3. Mobile Search Bar (Only for Mobile) */}
+        <div className="mt-2.5 md:hidden w-full">
+          <div className="relative w-full">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="पूजा सामग्री खोजें..."
+              className="w-full pl-9 pr-4 py-2 text-sm border border-gray-300 rounded-full bg-gray-50 focus:bg-white focus:outline-none focus:border-amber-600"
+            />
+            <span className="absolute left-3 top-2.5 text-gray-400 text-sm">🔍</span>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}

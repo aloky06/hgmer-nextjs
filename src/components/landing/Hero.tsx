@@ -224,3 +224,74 @@ export default function Hero() {
     </section>
   );
 }
+import React from 'react';
+import Link from 'next/link';
+
+export default function Hero() {
+  return (
+    <section className="relative w-full bg-gradient-to-b from-[#2b0806] to-[#42120e] text-white py-8 px-4 sm:px-6">
+      <div className="max-w-4xl mx-auto text-center flex flex-col items-center">
+        
+        <span className="text-amber-300 text-xs sm:text-sm font-medium mb-2">
+          ★ भारत का सबसे विश्वसनीय आध्यात्मिक स्टोर ★
+        </span>
+
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-extrabold text-amber-400 leading-tight">
+          हर घर मंदिर
+        </h1>
+
+        <p className="mt-2 text-xs sm:text-base text-gray-200 max-w-xl">
+          हर पूजा के लिए संपूर्ण वैदिक सामग्री, गंगाजल व सुगंधित धूप - सीधे आपके द्वार
+        </p>
+
+        {/* Feature Cards: Mobile में 1-कॉलम, Desktop में 3-कॉलम */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 w-full my-6">
+          <div className="bg-black/25 border border-amber-500/20 rounded-lg p-2.5 text-center">
+            <h3 className="font-bold text-amber-300 text-sm">100% शुद्ध सामग्री</h3>
+            <p className="text-[11px] text-gray-300">मंदिर अभिमंत्रित एवं प्रमाणित</p>
+          </div>
+          <div className="bg-black/25 border border-amber-500/20 rounded-lg p-2.5 text-center">
+            <h3 className="font-bold text-amber-300 text-sm">विद्वान पंडित जी</h3>
+            <p className="text-[11px] text-gray-300">घर पर पूजा एवं अनुष्ठान</p>
+          </div>
+          <div className="bg-black/25 border border-amber-500/20 rounded-lg p-2.5 text-center">
+            <h3 className="font-bold text-amber-300 text-sm">एक्सप्रेस डिलीवरी</h3>
+            <p className="text-[11px] text-gray-300">पूरे भारत में सुरक्षित पैकिंग</p>
+          </div>
+        </div>
+
+        {/* Action Buttons: Mobile में एक के नीचे एक, Desktop में कतार में */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 w-full sm:w-auto">
+          <Link
+            href="/shop"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm shadow text-center"
+          >
+            पूजा सामग्री खरीदें
+          </Link>
+          <Link
+            href="/kits"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-lg bg-[#87231b] hover:bg-[#721c15] text-white font-semibold text-sm shadow text-center"
+          >
+            सम्पूर्ण पूजा किट
+          </Link>
+          <Link
+            href="/book-pandit"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-lg border border-amber-400 text-amber-300 hover:bg-amber-400/10 font-semibold text-sm text-center"
+          >
+            पंडित जी बुक करें
+          </Link>
+        </div>
+
+        {/* Social Proof */}
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3 text-[11px] sm:text-xs text-gray-300">
+          <span><strong className="text-amber-400">★ 4.8</strong> गूगल रेटिंग</span>
+          <span>•</span>
+          <span><strong className="text-amber-400">10L+</strong> संतुष्ट भक्त</span>
+          <span>•</span>
+          <span>सुरक्षित पैकेजिंग</span>
+        </div>
+
+      </div>
+    </section>
+  );
+}
