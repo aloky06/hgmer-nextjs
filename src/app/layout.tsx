@@ -57,3 +57,11 @@ export default function RootLayout({
     </html>
   );
 }
+export const metadata: Metadata = {
+  title: "Har Ghar Mandir - 100% शुद्ध पूजा सामग्री एवं पंडित जी बुकिंग",
+  description: "हर पूजा के लिए संपूर्ण वैदिक सामग्री सीधे आपके द्वार",
+  icons: {
+    icon: "/hgmr.png",
+    apple: "/hgmr.png",
+  },
+};
