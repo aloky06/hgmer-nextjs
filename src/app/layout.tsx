@@ -1,4 +1,14 @@
 import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Har Ghar Mandir - 100% शुद्ध पूजा सामग्री एवं पंडित जी बुकिंग",
+  description: "हर पूजा के लिए संपूर्ण वैदिक सामग्री सीधे आपके द्वार",
+  icons: {
+    icon: "/logo.png", // public फोल्डर में मौजूद आपके लोगो का सही नाम व एक्सटेंशन
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
+};
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
